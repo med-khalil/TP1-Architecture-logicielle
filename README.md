@@ -12,7 +12,7 @@ The initial CarManager class handle more than one role:
 Since we can find more than one reason to change the CarManager class it clearly violate the SRP 
 #### How did we fix it
 We extracted the 2 method reponsible for formatting the car names and companring between different cars into their own class (CarComparer and CarFormater and both depend on the carmanager)
-![SRP](/out/SRP/ClassDiagramSRP.png?raw=true "SRP")
+![SRP](/out/SRP/ClassDiagramSRP/ClassDiagramSRP.png?raw=true "SRP")
 
 ## Open Close Principal -OCP
 ### defintion
@@ -21,7 +21,7 @@ Classes should be open for extension, but closed for modification. Thepurpose of
 
 #### How does the initial implementation violate the OCP
 #### How did we fix it
-![OCP](/out/OCP/ClassDiagramOCP.png?raw=true "OCP")
+![OCP](/out/OCP/ClassDiagramOCP/ClassDiagramOCP.png?raw=true "OCP")
 
 ## Liskov Substitution Principle -LSP
 ### defintion
@@ -30,7 +30,7 @@ Classes should be open for extension, but closed for modification. Thepurpose of
 
 #### How does the initial implementation violate the LSP
 #### How did we fix it
-![LSP](/out/LSP/ClassDiagramLSP.png?raw=true "LSP")
+![LSP](/out/LSP/ClassDiagramLSP/ClassDiagramLSP.png?raw=true "LSP")
 
 ## Interface Segregation Principle -ISP
 ### defintion
