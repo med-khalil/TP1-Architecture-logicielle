@@ -30,11 +30,17 @@ Classes should be open for extension, but closed for modification. Thepurpose of
 
 ## Liskov Substitution Principle -LSP
 ### Defintion
+Any objects of a superclass shall be replaceable with an objects of its subclasses without breaking the application. 
 
+That requires the objects of subclasses to behave in the same way as the objects of the superclass.
 ### Exercise
-
 #### How does the initial implementation violate the LSP
+In the initial design ElectronicDuck did inherit formm Duck however the overiden method in the ElectronicDuck subclass (inherited from Duck) need specific logic that is only present inside the ElectronicDuck class to funtion (_on being set to true). 
+
+This break the  LSP principal since we can't substitue Duck by ElectronicDuck inside the pool class without breaking our program
+
 #### How did we fix it?
+We made sure that the design respect the LSP principal by renaming Duck to LivingDuck and breaking the inheritance relationship between LivingDuck and ElectronicDuck (now both implement the interface IDuck without ElectronicDuck inheriting from Duck)
 ![LSP](/out/LSP/ClassDiagramLSP/ClassDiagramLSP.png?raw=true "LSP")
 
 ## Interface Segregation Principle -ISP
