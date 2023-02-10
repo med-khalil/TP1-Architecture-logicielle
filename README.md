@@ -17,6 +17,7 @@ The initial CarManager class handle more than one role:
 Since we can find more than one reason to change the CarManager class it clearly violate the SRP 
 #### How did we fix it?
 We extracted the 2 method reponsible for formatting the car names and companring between different cars into their own class (CarComparer and CarFormater and both depend on the carmanager)
+
 ![SRP](/out/SRP/ClassDiagramSRP/ClassDiagramSRP.png?raw=true "SRP")
 
 ## Open Close Principal -OCP
@@ -26,6 +27,7 @@ Classes should be open for extension, but closed for modification. Thepurpose of
 
 #### How does the initial implementation violate the OCP
 #### How did we fix it?
+
 ![OCP](/out/OCP/ClassDiagramOCP/ClassDiagramOCP.png?raw=true "OCP")
 
 ## Liskov Substitution Principle -LSP
@@ -41,15 +43,21 @@ This break the  LSP principal since we can't substitue Duck by ElectronicDuck in
 
 #### How did we fix it?
 We made sure that the design respect the LSP principal by renaming Duck to LivingDuck and breaking the inheritance relationship between LivingDuck and ElectronicDuck (now both implement the interface IDuck without ElectronicDuck inheriting from Duck)
+
 ![LSP](/out/LSP/ClassDiagramLSP/ClassDiagramLSP.png?raw=true "LSP")
 
 ## Interface Segregation Principle -ISP
 ### Defintion
+The interface segregation principle (ISP) states that no code should be forced to depend on methods it does not use. 
 
+ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them
 ### Exercise
 
 #### How does the initial implementation violate the ISP
+initially both TimedDoor and SensingDoor both implement the Door interface which contains 2 methods proximityCallback() and timeOutCallback() that are not used by both class
 #### How did we fix it?
+We extracted the the 2 methods that are not used by all interface implementations into the 2 different correponding interfaces to make sure to respect the ISP
+
 ![ISP](/out/ISP/ClassDiagramISP/ClassDiagramISP.png?raw=true "ISP")
 
 ## Dependency Inversion Principle - DIP
@@ -59,4 +67,5 @@ We made sure that the design respect the LSP principal by renaming Duck to Livin
 
 #### How does the initial implementation violate the ISP
 #### How did we fix it?
+
 ![DIP](/out/DIP/ClassDiagramDIP/ClassDiagramDIP.png?raw=true "DIP")
