@@ -62,10 +62,20 @@ We extracted the the 2 methods that are not used by all interface implementation
 
 ## Dependency Inversion Principle - DIP
 ### Defintion
+High-level modules, which provide complex logic, should be easily reusable and unaffected by changes in low-level modules, which provide utility features.
+
+To achieve those result we should follow those 2 rules 
+1. High-level modules should not depend on low-level modules. Both should depend on abstractions.
+
+2. Abstractions should not depend on details. Details should depend on abstractions.
 
 ### Exercise
 
 #### How does the initial implementation violate the ISP
+MyDatabase and the encoding are 2 utility features (low level) that we may decide to change at some point in time. 
+
+Initially it is clear that the encoding moduleClient and that EncodingBasedOnNetworkAndDatabaseModule are highly coupled respectively with MyDatabase and the both Encoding class making any future change difficult if the app become more complex.
 #### How did we fix it?
+To fix this issue we applied DIP by introducing a layer of abstraction (IEncode and IDatabase) to make sure that both high level and low level code depend only on abstraction.
 
 ![DIP](/out/DIP/ClassDiagramDIP/ClassDiagramDIP.png?raw=true "DIP")
