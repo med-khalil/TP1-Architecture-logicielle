@@ -23,7 +23,7 @@ public class EncodingBasedOnNetworkAndDatabaseModule implements IEncode {
         }
         String inputString = inputString1.toString();
         String encodedString = Base64.getEncoder().encodeToString(inputString.getBytes());
-        MyDatabase database = new MyDatabase();
+        IDatabase database = new MyDatabase();
         database.write(encodedString);
     }
 }

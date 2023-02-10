@@ -1,0 +1,47 @@
+interface IDoor{
+    void lock()
+    void unlock()
+    void open()
+    void close()
+}
+
+interface IProximityDoor {
+    void proximityCallback()
+}
+
+interface ITimedDoor {
+    void timeOutCallback()
+}
+
+class SensingDoor implements IDoor, IProximityDoor {
+    public SensingDoor(Sensor sensor)
+    public void lock() 
+    public void unlock()
+    public void open() 
+    public void close()
+    public void proximityCallback()
+}
+
+class TimedDoor implements IDoor, ITimedDoor {
+    -{static} int TIME_OUT 
+    -boolean _locked
+    -boolean _opened
+    TimedDoor(Timer timer) 
+    void lock()
+    void unlock()
+    void open()
+    void close()
+    void timeOutCallback()
+}
+
+class Sensor {
+    void register(IProximityDoor door)
+    boolean isPersonClose() 
+}
+
+class Timer {
+    void register(long timeOut, final ITimedDoor door)
+}
+
+Timer ..> ITimedDoor
+Sensor ..> IProximityDoor

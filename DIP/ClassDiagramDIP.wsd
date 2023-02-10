@@ -1,0 +1,29 @@
+interface IEncode{
+    void encode() throws IOException;
+}
+class EncodingBasedOnNetworkAndDatabaseModule implements IEncode{
+    void encode() throws IOException;
+
+}
+
+class EncodingWithFilesModule implements IEncode {
+    void encode() throws IOException;
+}
+
+class EncodingModuleClient {
+    {static} void main(String[] args) throws IOException
+}
+
+interface IDatabase {
+    public int write(String inputString);
+}
+
+class MyDatabase implements IDatabase{
+    -{static} Map<Integer, String> _data
+    -{static} int _count
+
+    int write(String inputString)
+}
+
+EncodingModuleClient ..> IEncode
+EncodingBasedOnNetworkAndDatabaseModule ..> IDatabase
