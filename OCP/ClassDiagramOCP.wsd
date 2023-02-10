@@ -1,0 +1,27 @@
+interface IResource {
+    void markAsFree();
+    void markAsBusy();
+    int findFreeSlot();
+}
+
+class ResourceAllocator {
+    int allocate(IResource resource) 
+    void free(IResource resource, int resourceId) 
+    IResource getResourceById(int resourceId) 
+    void freeResource(int resourceId) 
+    void markAsBusy(int resourceId)
+}
+
+class SpaceResource implements IResource {
+    void markAsFree()
+    void markAsBusy()
+    int findFreeSlot()
+}
+
+class TimeResource implements IResource {
+    void markAsFree()
+    void markAsBusy()
+    int findFreeSlot()
+}
+
+ResourceAllocator ..> IResource

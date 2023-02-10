@@ -1,0 +1,28 @@
+interface IDuck {
+    void quack()
+    void swim()
+}
+
+class LivingDuck implements IDuck {
+    void quack()
+    void swim()
+}
+
+class ElectronicDuck implements IDuck {
+    void quack()
+    void swim()
+    void turnOn()
+    void turnOff()
+}
+
+class Pool {
+    void run()
+    void main(String[] args)
+    void quack(IDuck... ducks)
+    void swim(IDuck... ducks)
+}
+note right: Pool depends on ElectronicDuck and \n LivingDuck only due to the fact that instances \n of those classes  are initialized inside pool 
+
+Pool ..> IDuck
+Pool ..> ElectronicDuck
+Pool ..> LivingDuck

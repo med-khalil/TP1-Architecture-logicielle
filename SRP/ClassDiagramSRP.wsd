@@ -1,0 +1,36 @@
+class Car {
+    - id
+    - model
+    - brand
+    getId()
+    getModel()
+    getBrand()
+}
+
+class CarComparer {
+    CarManager carManager
+
+    void CarComparer(CarManager carManager)
+    Car getBestCar() 
+}
+
+class CarFormatter {
+    CarManager carManager
+
+    CarFormatter(CarManager carManager)
+    String getCarsNames()
+}
+
+
+class CarManager {
+    List<Car> _carsDb
+
+    Car getFromDb(String carId)
+    List<Car> getAllCars() 
+}
+
+CarManager ..> Car
+CarComparer ..> Car
+CarFormatter ..> Car
+CarComparer ..> CarManager
+CarFormatter ..> CarManager
