@@ -1,4 +1,8 @@
 # TP1 SOLID Principals
+## Group:
+- Med Khalil Ben Abdallah
+- Youssef Smaoui
+
 ## Single Responsibility Principal -SRP
 ### Defintion
 
