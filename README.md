@@ -22,12 +22,13 @@ We extracted the 2 method reponsible for formatting the car names and companring
 
 ## Open Close Principal -OCP
 ### Defintion
-Classes should be open for extension, but closed for modification. Thepurpose of this principle is being able to extend a Class’s behaviour withoutchanging the existing behaviour of that Class.
+Classes should be open for extension, but closed for modification. The purpose of this principle is being able to extend a Class’s behaviour without changing the existing behaviour of that Class.
 ### Exercise
 
 #### How does the initial implementation violate the OCP
+Initially any modification or add to a new type of ressource require us to go through the ResourceAllocator methods and add a new check on the ResourceType which is not ideal since this make extention of the behavior hard to do
 #### How did we fix it?
-
+We fixed this problem by creating 2 different ressource class that both implements IRessource. We only needs to use Iressource and only adding a new class if we need a new type of ressource (open for extention) without changing the ressource allocator code.
 ![OCP](/out/OCP/ClassDiagramOCP/ClassDiagramOCP.png?raw=true "OCP")
 
 ## Liskov Substitution Principle -LSP
@@ -72,9 +73,9 @@ To achieve those result we should follow those 2 rules
 ### Exercise
 
 #### How does the initial implementation violate the ISP
-MyDatabase and the encoding are 2 utility features (low level) that we may decide to change at some point in time. 
+MyDatabase and the both encoding Module are utility features (low level) that we may decide to change at some point in time. 
 
-Initially it is clear that the encoding moduleClient and that EncodingBasedOnNetworkAndDatabaseModule are highly coupled respectively with MyDatabase and the both Encoding class making any future change difficult if the app become more complex.
+Initially it is clear that the encodingModuleClient and that EncodingBasedOnNetworkAndDatabaseModule are highly coupled respectively with MyDatabase and the both Encoding class making any future change difficult if the app become more complex.
 #### How did we fix it?
 To fix this issue we applied DIP by introducing a layer of abstraction (IEncode and IDatabase) to make sure that both high level and low level code depend only on abstraction.
 
